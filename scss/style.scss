@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Jaapokki;
+    src: url(../css/jaapokki-regular.ttf);
+}
+
+.fullpage {
+    width: calc(100vw - 100px);
+    height: calc(100vh - 100px);
+    padding: 50px;
+}
+
+.content {
+    width: calc(100% - 120px);
+    height: calc(100% - 120px);
+    background-color: white;
+    padding: 60px;
+}
+
+h1 {
+    font-family: "Jaapokki", trebuchet;
+    font-size: 36px;
+
+}
