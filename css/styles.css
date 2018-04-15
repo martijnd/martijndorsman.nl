@@ -46,11 +46,11 @@ a {
     margin-top: -12px;
     z-index: -1;
     width: 0;
-    height: 7px;
+    height: 9px;
     transition: width 0.3s;
-    opacity: 0.7; }
+    opacity: 0.3; }
   a:hover:after {
-    width: 100%;
+    width: 110%;
     right: 0; }
 
 p.description {
@@ -77,8 +77,6 @@ p.description {
     display: inline-block;
     color: black;
     line-height: 1.4; }
-    .list a:hover {
-      font-weight: bold; }
 
 .footer {
   text-align: center; }
