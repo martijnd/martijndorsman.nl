@@ -1,0 +1,126 @@
+$fullpage-padding: 50px;
+$content-padding: 60px;
+
+
+
+@font-face {
+    font-family: Jaapokki;
+    src: url(../css/jaapokki-regular.ttf);
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    user-select: none;
+    line-height: 1;
+    font-size: 64.5%;
+}
+
+.fullpage {
+    width: calc(100vw - 2 * #{$fullpage-padding});
+    height: calc(100vh - 2 * #{$fullpage-padding});
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 510px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    padding: 60px;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+h3 {
+    font-size: 2em;
+    margin-top: 7%;
+}
+
+h1, h2, h3 {
+    font-family: "Jaapokki", trebuchet, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+p.description {
+    font-size: 1.6em;
+    color: #1B0D0D;
+    max-width: 500px;
+    line-height: 1.4;
+}
+
+.list {
+    position: relative;
+    font-size: 1.6em;
+    padding-left: 25px;
+    display: inline-block;
+    margin-bottom: 45px;
+    li::before {
+        display: block;
+        content: '';
+        float: left;
+        margin-top: 12px;
+        margin-left: -20px;
+        margin-right: 15px;
+        transform: translate(-50%, -50%);
+    }
+    a {
+        display: inline-block;
+        color: black;
+        line-height: 1.4;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color: #7B7B7B;
+    margin-right: 5%;
+    line-height: 20px;
+
+}
+
+strong {
+    font-weight: bold;
+}
+
+@media all and (max-width: 725px) {
+    body {
+        font-size: 50%;
+    }
+
+    .content {
+        min-height: 400px;
+        padding: 30px;
+    }
+    li::before {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media all and (min-width: 726px){
+    li::before {
+        width: 8px;
+        height: 8px;
+    }
+}
