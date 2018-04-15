@@ -21,5 +21,6 @@ function background_gradient(){
     let style = 'linear-gradient(to bottom, ' + color1 + ', ' + color2 + ' 100%)';
 
     $('.fullpage').css('background', style);
-    console.log($('.fullpage').css('background'));
+    $( "<style>.list li::before { background: " + style + " }</style>" ).appendTo( "head" );
+
 }
