@@ -1,8 +1,6 @@
 $fullpage-padding: 50px;
 $content-padding: 60px;
 
-
-
 @font-face {
     font-family: Jaapokki;
     src: url(../css/jaapokki-regular.ttf);
@@ -52,6 +50,22 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
+    display: inline-block;
+    padding-top: 5px;
+    &:after {
+        content: '';
+        display: block;
+        margin-top: -12px;
+        z-index: -1;
+        width: 0;
+        height: 7px;
+        transition: width 0.3s;
+        opacity: 0.7;
+    }
+    &:hover:after {
+        width: 100%;
+        right: 0;
+    }
 }
 
 p.description {
@@ -71,7 +85,7 @@ p.description {
         display: block;
         content: '';
         float: left;
-        margin-top: 12px;
+        margin-top: 16px;
         margin-left: -20px;
         margin-right: 15px;
         transform: translate(-50%, -50%);
@@ -96,7 +110,6 @@ p.description {
     color: #7B7B7B;
     margin-right: 5%;
     line-height: 20px;
-
 }
 
 strong {
@@ -107,7 +120,6 @@ strong {
     body {
         font-size: 50%;
     }
-
     .content {
         min-height: 400px;
         padding: 30px;
@@ -115,6 +127,7 @@ strong {
     li::before {
         width: 5px;
         height: 5px;
+        margin-top: 14px !important;
     }
 }
 

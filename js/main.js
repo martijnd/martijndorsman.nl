@@ -25,18 +25,15 @@ function background_gradient2(){
         13: ['D'],
         14: ['E'],
         15: ['F'],
-
     };
 
     let randomAngle = getRandomInt(360);
     let color1 = colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)];
     let color2 = colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)];
     let style = 'linear-gradient(' + randomAngle + 'deg, #' + color1.toString() + ', #' + color2.toString() + ' 100%)';
-    console.log(style);
 
     $('.fullpage').css('background', style);
     $( "<style>.list li::before { background: " + style + " }</style>" ).appendTo( "head" );
-
 }
 
 function background_gradient(){
@@ -62,6 +59,7 @@ function background_gradient(){
     let style = 'linear-gradient(' + randomAngle + 'deg, ' + color1 + ', ' + color2 + ' 100%)';
 
     $('.fullpage').css('background', style);
-    $( "<style>.list li::before { background: " + style + " }</style>" ).appendTo( "head" );
+    $( "<style>.list li::before { background: " + style + " }" +
+        "a:after { background: " + style + "</style>" ).appendTo( "head" );
 
 }
