@@ -1,5 +1,6 @@
 $(function () {
     background_gradient();
+    console.log("Beep boop");
 });
 
 function getRandomInt(max) {
