@@ -29,24 +29,34 @@ body {
     padding: 60px;
 }
 
+// Animation
+h1, h2, h3, p, li, .footer a {
+    animation: textShow .5s forwards;
+    opacity: 0;
+}
+
+h1, h2, h3 {
+    font-family: "Jaapokki", trebuchet, sans-serif;
+}
+
 h1 {
     font-size: 4em;
 }
 
 h2 {
     font-size: 2em;
+    opacity: 0;
     margin-top: 1%;
     margin-bottom: 2%;
+    animation-delay: .15s;
 }
 
 h3 {
     font-size: 2em;
     margin-top: 7%;
+    animation-delay: 0.15s;
 }
 
-h1, h2, h3 {
-    font-family: "Jaapokki", trebuchet, sans-serif;
-}
 
 a {
     text-decoration: none;
@@ -70,6 +80,7 @@ a {
 
 p.description {
     font-size: 1.6em;
+    animation-delay: 0.3s;
     color: #1B0D0D;
     max-width: 500px;
     line-height: 1.4;
@@ -81,6 +92,9 @@ p.description {
     padding-left: 25px;
     display: inline-block;
     margin-bottom: 45px;
+    ul li {
+        animation: textShow .2s forwards;
+    }
     li::before {
         display: block;
         content: '';
@@ -95,19 +109,52 @@ p.description {
         color: black;
         line-height: 1.4;
     }
+    li:nth-child(1) {
+        animation-delay: 0.55s;
+    }
+    li:nth-child(2) {
+        animation-delay: 0.65s;
+    }
+    li:nth-child(3) {
+        animation-delay: 0.75s;
+    }
+    li:nth-child(4) {
+        animation-delay: 0.85s;
+    }
+    li:nth-child(5) {
+        animation-delay: 0.95s;
+    }
+    li:nth-child(6) {
+        animation-delay: 1.05s;
+    }
 }
 
 .footer {
     text-align: center;
+    a {
+        font-size: 1.6em;
+        text-transform: uppercase;
+        color: #7B7B7B;
+        margin-right: 5%;
+        line-height: 20px;
+    }
+    a:nth-child(1) {
+        animation-delay: 1.25s;
+    }
+    a:nth-child(2) {
+        animation-delay: 1.35s;
+    }
+    a:nth-child(3) {
+        animation-delay: 1.45s;
+    }
+    a:nth-child(4) {
+        animation-delay: 1.55s;
+    }
+    a:nth-child(5) {
+        animation-delay: 1.65s;
+    }
 }
 
-.footer a {
-    font-size: 1.6em;
-    text-transform: uppercase;
-    color: #7B7B7B;
-    margin-right: 5%;
-    line-height: 20px;
-}
 
 strong {
     font-weight: bold;
@@ -132,5 +179,16 @@ strong {
     li::before {
         width: 8px;
         height: 8px;
+    }
+}
+
+@keyframes textShow {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
