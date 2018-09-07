@@ -1,5 +1,5 @@
 $(function () {
-    background_gradient();
+    background_gradient2();
     console.log("Beep boop");
 });
 
