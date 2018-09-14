@@ -30,7 +30,7 @@ body {
 }
 
 // Animation
-h1, h2, h3, p, li, .footer a {
+h1, h2, h3, p, li, .footer a, .content {
     animation: textShow .5s forwards;
     opacity: 0;
 }

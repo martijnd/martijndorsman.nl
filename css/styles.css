@@ -31,7 +31,7 @@ body {
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   padding: 60px; }
 
-h1, h2, h3, p, li, .footer a {
+h1, h2, h3, p, li, .footer a, .content {
   -webkit-animation: textShow .5s forwards;
           animation: textShow .5s forwards;
   opacity: 0; }
