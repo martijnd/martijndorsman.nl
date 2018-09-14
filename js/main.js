@@ -1,43 +1,27 @@
-$(function () {
-    background_gradient();
+$( () => {
+    background_gradient2();
     console.log("Beep boop");
 });
 
-function getRandomInt(max) {
+const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
+}
+
+const repeat = (count) => {
+    let strings = [];
+    while(strings.length < count) {
+        strings.push(getRandomInt(16).toString(16));
+    }
+    return strings.join('');
 }
 
 function background_gradient2(){
 
-    let colors = {
-        0: ['1'],
-        1: ['2'],
-        2: ['3'],
-        3: ['4'],
-        4: ['5'],
-        5: ['6'],
-        6: ['7'],
-        7: ['8'],
-        8: ['9'],
-        9: ['0'],
-        10: ['A'],
-        11: ['B'],
-        12: ['C'],
-        13: ['D'],
-        14: ['E'],
-        15: ['F'],
-    };
-
-    let randomAngle = getRandomInt(360);
-    let color1 = colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)];
-    let color2 = colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)] + colors[getRandomInt(16)];
-    let style = 'linear-gradient(' + randomAngle + 'deg, #' + color1.toString() + ', #' + color2.toString() + ' 100%)';
-
-    $('.fullpage').css('background', style);
-    $( "<style>.list li::before { background: " + style + " }</style>" ).appendTo( "head" );
+    $('.fullpage').css('background', `linear-gradient(${getRandomInt(360)}deg, #${repeat(6)}, #${repeat(6)} 100%)`);
+    $( `<style>.list li::before { background: linear-gradient(${getRandomInt(360)}deg, #${repeat(6)}, #${repeat(6)} 100%) }</style>` ).appendTo( "head" );
 }
 
-function background_gradient(){
+const background_gradient = () => {
 
     let colors = {
         0: ["#00F2FE", "#4FACFE"],

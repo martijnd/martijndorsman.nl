@@ -101,7 +101,9 @@ p.description {
     animation-delay: 1.05s; }
 
 .footer {
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  align-content: space-between; }
   .footer a {
     font-size: 1.6em;
     text-transform: uppercase;
