@@ -131,6 +131,8 @@ p.description {
 
 .footer {
     text-align: center;
+    display: flex;
+    align-content: space-between;
     a {
         font-size: 1.6em;
         text-transform: uppercase;
