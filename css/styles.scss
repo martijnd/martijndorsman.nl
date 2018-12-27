@@ -7,7 +7,7 @@ $content-padding: 60px;
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
     user-select: none;
     line-height: 1;
     font-size: 64.5%;
@@ -25,17 +25,25 @@ body {
 .content {
     width: 510px;
     background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     padding: $content-padding;
 }
 
 // Animation
-h1, h2, h3, p, li, .footer a, .content {
-    animation: textShow .5s forwards;
+h1,
+h2,
+h3,
+p,
+li,
+.footer a,
+.content {
+    animation: textShow 0.5s forwards;
     opacity: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: "Jaapokki", trebuchet, sans-serif;
 }
 
@@ -48,7 +56,7 @@ h2 {
     opacity: 0;
     margin-top: 1%;
     margin-bottom: 2%;
-    animation-delay: .15s;
+    animation-delay: 0.15s;
 }
 
 h3 {
@@ -57,13 +65,12 @@ h3 {
     animation-delay: 0.15s;
 }
 
-
 a {
     text-decoration: none;
     display: inline-block;
     padding-top: 5px;
     &:after {
-        content: '';
+        content: "";
         display: block;
         margin-top: -12px;
         z-index: -1;
@@ -81,7 +88,7 @@ a {
 p.description {
     font-size: 1.6em;
     animation-delay: 0.3s;
-    color: #1B0D0D;
+    color: #1b0d0d;
     max-width: 500px;
     line-height: 1.4;
 }
@@ -93,11 +100,11 @@ p.description {
     display: inline-block;
     margin-bottom: 45px;
     ul li {
-        animation: textShow .2s forwards;
+        animation: textShow 0.2s forwards;
     }
     li::before {
         display: block;
-        content: '';
+        content: "";
         float: left;
         margin-top: 16px;
         margin-left: -20px;
@@ -126,22 +133,23 @@ p.description {
     }
     li:nth-child(6) {
         animation-delay: 1.05s;
-      }
+    }
     li:nth-child(7) {
-      animation-delay: 1.15s;
+        animation-delay: 1.15s;
     }
 }
 
 .footer {
-    text-align: center;
     display: flex;
+    flex-wrap: wrap;
     align-content: space-between;
+    justify-content: center;
     a {
         font-size: 1.6em;
         text-transform: uppercase;
-        color: #7B7B7B;
+        color: #7b7b7b;
         margin-right: 5%;
-        line-height: 20px;
+        line-height: 24px;
     }
     a:nth-child(1) {
         animation-delay: 1.25s;
@@ -159,7 +167,6 @@ p.description {
         animation-delay: 1.65s;
     }
 }
-
 
 strong {
     font-weight: bold;
@@ -180,7 +187,7 @@ strong {
     }
 }
 
-@media all and (min-width: 726px){
+@media all and (min-width: 726px) {
     li::before {
         width: 8px;
         height: 8px;
