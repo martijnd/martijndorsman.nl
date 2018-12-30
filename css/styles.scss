@@ -15,7 +15,8 @@ body {
 
 .fullpage {
     width: calc(100vw - 2 * #{$fullpage-padding});
-    height: calc(100vh - 2 * #{$fullpage-padding});
+    min-height: calc(100vh - 2 * #{$fullpage-padding});
+    height: 100%;
     padding: $fullpage-padding;
     display: flex;
     justify-content: center;

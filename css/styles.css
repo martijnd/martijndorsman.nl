@@ -9,7 +9,8 @@ body {
 
 .fullpage {
   width: calc(100vw - 2 * 50px);
-  height: calc(100vh - 2 * 50px);
+  min-height: calc(100vh - 2 * 50px);
+  height: 100%;
   padding: 50px;
   display: flex;
   justify-content: center;
