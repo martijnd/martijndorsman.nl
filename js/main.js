@@ -25,6 +25,12 @@ const fetchData = () => {
     $.get(
         `https://api.whatpulse.org/pulses.php?user=${username}&start=${start}&end=${end}&format=json`,
         response => {
+            if (response.error) {
+                $("#current-keys").text("0");
+                $("#current-clicks").text("0");
+                return;
+            }
+
             Object.values(response).forEach(pulse => {
                 keyTotal += +pulse.Keys;
                 clickTotal += +pulse.Clicks;
@@ -36,9 +42,8 @@ const fetchData = () => {
 };
 
 const background_gradient = () => {
-    const background = `linear-gradient(${getRandomInt(360)}deg, #${repeat(
-        6
-    )}, #${repeat(6)} 100%) `;
+    const background = `linear-gradient(${getRandomInt(360)}deg, \
+    #${repeat(6)}, #${repeat(6)} 100%) `;
     $(
         `<style>.list li::before { background: ${background}; } a:after { background: ${background};} .fullpage { background: ${background}; }</style>`
     ).appendTo("head");
