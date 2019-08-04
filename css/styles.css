@@ -1,6 +1,6 @@
 @font-face {
   font-family: Jaapokki;
-  src: url(../css/jaapokki-regular.ttf);
+  src: url(./jaapokki-regular.ttf);
 }
 body {
   font-family: "Work Sans", sans-serif;
