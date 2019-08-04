@@ -15,33 +15,29 @@ const repeat = count => {
   return strings.join("");
 };
 
-const fetchData = () => {
+const fetchData = async () => {
   const username = "Gastlyguy";
   let keyTotal = 0;
   let clickTotal = 0;
-  const start = moment()
-    .startOf("day")
-    .unix();
-  const end = moment().unix();
-  fetch(
-    `https://api.whatpulse.org/pulses.php?user=${username}\
-    &start=${start}&end=${end}&format=json`
-  )
-    .then(res => res.json())
-    .then(response => {
-      if (response.error) {
-        $("#current-keys").innerHTML = "0";
-        $("#current-clicks").innerHTML = "0";
-        return;
-      }
+  const start = Math.round(new Date().setHours(0, 0, 0, 0) / 1000);
+  const end = Math.round(new Date().getTime() / 1000);
+  const response = await fetch(
+    `https://api.whatpulse.org/pulses.php?user=${username}&start=${start}&end=${end}&format=json`
+  );
+  const json = await response.json();
 
-      Object.values(response).forEach(pulse => {
-        keyTotal += +pulse.Keys;
-        clickTotal += +pulse.Clicks;
-      });
-      $("#current-keys").innerHTML = keyTotal;
-      $("#current-clicks").innerHTML = clickTotal;
-    });
+  if (json.error) {
+    $("#current-keys").innerHTML = "0";
+    $("#current-clicks").innerHTML = "0";
+    return;
+  }
+
+  Object.values(json).forEach(pulse => {
+    keyTotal += +pulse.Keys;
+    clickTotal += +pulse.Clicks;
+  });
+  $("#current-keys").innerHTML = keyTotal;
+  $("#current-clicks").innerHTML = clickTotal;
 };
 
 const background_gradient = () => {
