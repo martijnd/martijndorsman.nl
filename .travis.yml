@@ -1,7 +1,12 @@
 before_install:
-- bash scripts/install.sh
+  - bash scripts/install.sh
 script:
-- bash scripts/build.sh
-- bash scripts/test.sh
+  - bash scripts/build.sh
+  - bash scripts/test.sh
 after_success:
-- bash scripts/deploy.sh 
+  - bash scripts/deploy.sh
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev # required to avoid SSL errors
