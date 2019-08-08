@@ -6,7 +6,7 @@ openssl aes-256-cbc -K $encrypted_1822c372ce6f_key -iv $encrypted_1822c372ce6f_i
 rm deploy-key.enc
 chmod 600 deploy-key
 ls ~/.ssh
-mv deploy-key ~/.ssh/deploy-key
+mv deploy-key ~/.ssh/id_rsa
 ls ~/.ssh
 
 npm install uglify-es -g
