@@ -2,7 +2,7 @@
 set -x
 
 #import the deployment key
-openssl aes-256-cbc -K $encrypted_1822c372ce6f_key -iv $encrypted_1822c372ce6f_iv -in deploy-key.enc -out deploy-key -d
+openssl aes-256-cbc -K $encrypted_120bdf80dce1_key -iv $encrypted_120bdf80dce1_iv -in deploy-key.enc -out deploy-key -d
 rm deploy-key.enc
 chmod 600 deploy-key
 ls ~/.ssh
