@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     background_gradient();
-    fetchData();
     console.log("Beep boop");
 });
 
@@ -13,30 +12,6 @@ const repeat = count => {
         strings.push(getRandomInt(16).toString(16));
     }
     return strings.join("");
-};
-
-const fetchData = async () => {
-    const username = "Gastlyguy";
-    let keyTotal = 0;
-    let clickTotal = 0;
-    const start = Math.round(new Date().setHours(0, 0, 0, 0) / 1000);
-    const end = Math.round(new Date().getTime() / 1000);
-    const response = await fetch(
-        `https://api.whatpulse.org/pulses.php?user=${username}&start=${start}&end=${end}&format=json`
-    );
-    const json = await response.json();
-
-    if (json.error) {
-        $("#current-keys").innerHTML = "0";
-        $("#current-clicks").innerHTML = "0";
-    } else {
-        Object.values(json).forEach(pulse => {
-            keyTotal += +pulse.Keys;
-            clickTotal += +pulse.Clicks;
-        });
-        $("#current-keys").innerHTML = keyTotal;
-        $("#current-clicks").innerHTML = clickTotal;
-    }
 };
 
 const background_gradient = () => {
